@@ -302,6 +302,39 @@ def plot_logistic_regression(X_train_scaled, X_validate_scaled, y_train, y_valid
 
 
 
+## BEST MODEL ##
+
+
+
+def best_model(X_train_scaled, X_test_scaled, y_train, y_test):
+    """
+    Trains a decision tree classifier with a specified maximum depth using the provided scaled training data
+    (X_train_scaled) and corresponding labels (y_train). Evaluates the trained model's accuracy on the scaled test
+    data (X_test_scaled) and corresponding labels (y_test).
+
+    Parameters:
+        X_train_scaled (array-like): Scaled training data, where each row represents a sample and each column
+            represents a feature.
+        X_test_scaled (array-like): Scaled test data, where each row represents a sample and each column represents
+            a feature.
+        y_train (array-like): Labels for the training data. Each element corresponds to the label of the respective
+            sample in X_train_scaled.
+        y_test (array-like): Labels for the test data. Each element corresponds to the label of the respective sample
+            in X_test_scaled.
+
+    Returns:
+        float: Accuracy of the trained decision tree classifier on the test data.
+
+    """
+    tree = DecisionTreeClassifier(max_depth=12, random_state=123)
+    tree.fit(X_train_scaled, y_train)
+    tree.score(X_test_scaled, y_test)
+
+    return tree.score(X_test_scaled, y_test)
+
+
+
+
 
 
 
