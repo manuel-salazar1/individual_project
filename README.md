@@ -92,6 +92,7 @@
     - This could give the business more insights on what the customer wants and needs are
     - i.e. On a scale 1 - 5, how satisfied were you with inflight entertainment? By selecting important or not important, how do you rate the level of importance?
 ## Steps to Reproduce
+- Clone this repo or download all .py files and final.ipynb
 - Acquire both datasets from:
     - **Note:** You need to be logged into your Kaggle account in order to download csv files.
         - Click the black "download" button at the top right of the page
