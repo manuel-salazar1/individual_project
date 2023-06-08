@@ -1,4 +1,24 @@
 # Operation Soar
+- Steps to reproduce are located at the bottom of this ReadMe.
+# Project planning 
+## Wrangle
+### Acquire:
+- Data was acquired from Kaggle
+    - https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction?resource=download&select=train.csv
+    - https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction?resource=download&select=test.csv
+- 1st data set (train) consisted of 103,904 rows and 25 columns
+- 2nd data set (test) consisted of 25,976 rows and 25 columns
+- Each row represents 1 customer survey
+- Each column respresents a unique question or data point
+### Prepare:
+- Combined the 2 data sets which resulted in 1 data frame consisting of 129,880 rows and 25 columns
+- **Nulls:** Dropped 393 nulls
+- Replaced special characters in column names with '_' and removed spaces
+- Dropped 1 column named 'unnamed:_0'
+- Renamed 'class' to 'customer_class' for exploration
+- Created dummy columns for columns with strings
+- Data frame consisted of 129,487 row and 30 columns
+- Split data into train, validate, test
 ## Data Dictionary
 | Feature | Definition |
 |:--------|:-----------|
@@ -26,26 +46,6 @@
 |departure_delay_in_minutes|Minutes delayed for departure|
 |arrival_delay_in_minutes|Minutes delayed for Arrival|
 |satisfaction(Target Variable)|Airline satisfaction level(Satisfaction, neutral or dissatisfaction)|
-# Project planning 
-## Wrangle
-### Acquire:
-- Data was acquired from Kaggle
-    - https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction?resource=download&select=train.csv
-    - https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction?resource=download&select=test.csv
-- 1st data set (train) consisted of 103,904 rows and 25 columns
-- 2nd data set (test) consisted of 25,976 rows and 25 columns
-- Each row represents 1 customer survey
-- Each column respresents a unique question or data point
-### Prepare:
-- Combined the 2 data sets which resulted in 1 data frame consisting of 129,880 rows and 25 columns
-- **Nulls:** Dropped 393 nulls
-- Replaced special characters in column names with '_' and removed spaces
-- Dropped 1 column named 'unnamed:_0'
-- Renamed 'class' to 'customer_class' for exploration
-- Created dummy columns for columns with strings
-- Data frame consisted of 129,487 row and 30 columns
-- Split data into train, validate, test
-
 ## Exploration
 - This phase was used to search for key drivers in passenger satisfaction.
 - After some initial exploration I asked 5 question to gain additional clarity of the data
@@ -93,6 +93,10 @@
     - i.e. On a scale 1 - 5, how satisfied were you with inflight entertainment? By selecting important or not important, how do you rate the level of importance?
 ## Steps to Reproduce
 - Acquire both datasets from:
+    - **Note:** You need to be logged into your Kaggle account in order to download csv files.
+        - Click the black "download" button at the top right of the page
+        - It should allow you to download both csv's at the same time
+            - Once downloaded, move both csv's to the folder/directory you are going to run the notebook in
     - https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction?resource=download&select=train.csv
     - https://www.kaggle.com/datasets/teejmahal20/airline-passenger-satisfaction?resource=download&select=test.csv
 - Prepare data using functions in wrangle.py file:
